@@ -1,0 +1,1271 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  background: #090c0f;
+  color: #f5f5f5;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+/* HEADER */
+
+.topbar {
+  height: 64px;
+  background: #101418;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 26px;
+  border-bottom: 1px solid #181d22;
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  left: 26px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.logo-icon {
+  width: 30px;
+  height: 20px;
+  border-left: 8px solid #fff;
+  border-top: 8px solid #fff;
+  display: inline-block;
+}
+
+.search-box {
+  width: 760px;
+  max-width: 45vw;
+  height: 48px;
+  background: #252a30;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 18px;
+}
+
+.search-box input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 16px;
+}
+
+.search-box input::placeholder {
+  color: #a4a8af;
+}
+
+.top-actions {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 18px;
+  z-index: 50;
+}
+
+.action-btn {
+  width: 48px;
+  height: 48px;
+  border: none;
+  background: transparent;
+  color: #f5f5f5;
+  font-size: 24px;
+  font-weight: 900;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+}
+
+.action-btn:hover {
+  background: #252a30;
+}
+
+.user-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #8f949c;
+  color: #d9dde3;
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+}
+
+/* SPORTS NAV */
+
+.sports-nav {
+  height: 74px;
+  background: #080a0d;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 20px;
+  overflow-x: auto;
+  border-bottom: 1px solid #15191e;
+}
+
+.sports-nav button {
+  min-width: fit-content;
+  background: transparent;
+  border: none;
+  color: #f1f1f1;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  padding: 12px 18px;
+  border-radius: 8px;
+}
+
+.sports-nav button.active {
+  background: #2b3036;
+}
+
+/* LAYOUT */
+
+.layout {
+  display: grid;
+  grid-template-columns: 500px minmax(0, 1fr);
+  min-height: calc(100vh - 138px);
+}
+
+.sidebar {
+  background: #12171c;
+  border-right: 1px solid #242a31;
+  padding: 16px 14px;
+}
+
+.content {
+  padding: 0 14px 30px;
+  overflow-x: hidden;
+  min-width: 0;
+}
+
+.breadcrumb {
+  color: #7f8cff;
+  font-size: 14px;
+  font-weight: 800;
+  margin: 14px 0 18px;
+}
+
+/* SIDEBAR MATCHES */
+
+.matches-panel {
+  background: #171c21;
+  border-radius: 18px;
+  padding: 18px;
+}
+
+.round-selector {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.round-selector button,
+.round-selector select {
+  background: #11161b;
+  color: white;
+  border: 1px solid #30363d;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-weight: 900;
+}
+
+.match-group {
+  margin-bottom: 28px;
+}
+
+.match-group h3 {
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+
+.match-item {
+  display: grid;
+  grid-template-columns: 78px 1fr 28px;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 0;
+  border-bottom: 1px solid #242a31;
+}
+
+.match-time {
+  color: #9fb0c8;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.teams {
+  line-height: 1.35;
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.team-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.side-flag {
+  width: 22px;
+  height: 15px;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.star {
+  color: #cbd2df;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 190px;
+  background: linear-gradient(120deg, #711e17, #253a2a, #253b55, #462448);
+  border-radius: 18px 18px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 34px 48px;
+  position: relative;
+}
+
+.trophy {
+  font-size: 78px;
+}
+
+.hero h1 {
+  font-size: 34px;
+  margin-bottom: 22px;
+  letter-spacing: 2px;
+}
+
+.years {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  max-width: 800px;
+}
+
+.years button {
+  border: none;
+  background: #262a30;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 18px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.years button.active {
+  background: white;
+  color: #111;
+}
+
+.favorite-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  border: none;
+  background: white;
+  color: #111;
+  padding: 14px 22px;
+  border-radius: 4px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+/* TIMELINE */
+
+.timeline {
+  height: 90px;
+  background: linear-gradient(120deg, #711e17, #253a2a, #253b55, #462448);
+  border-radius: 0 0 18px 18px;
+  position: relative;
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.timeline .line {
+  position: absolute;
+  top: 32px;
+  left: 30px;
+  right: 30px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: 10px;
+}
+
+.step {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.step span {
+  width: 16px;
+  height: 16px;
+  background: #eee;
+  display: block;
+  border-radius: 50%;
+  margin: 0 auto 14px;
+}
+
+/* MAIN CARD */
+
+.main-card {
+  background: #151a1f;
+  border-radius: 18px;
+  margin-top: 16px;
+  overflow: hidden;
+}
+
+.section-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-bottom: 1px solid #2c3238;
+}
+
+.section-tabs button {
+  background: transparent;
+  border: none;
+  color: #777ed6;
+  padding: 24px;
+  font-size: 17px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.section-tabs button.active {
+  color: #8c94ff;
+  border-bottom: 4px solid #7f6dff;
+}
+
+/* TABLES */
+
+.table-box {
+  padding: 24px;
+}
+
+.group-table-block {
+  margin-bottom: 34px;
+}
+
+.table-box h2 {
+  margin-bottom: 14px;
+}
+
+.table-box table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-box th,
+.table-box td {
+  padding: 15px;
+  border-bottom: 1px solid #2a3036;
+  text-align: left;
+}
+
+.table-box th {
+  color: #9aa2ad;
+}
+
+.group-team {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 900;
+}
+
+.group-flag {
+  width: 26px;
+  height: 18px;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+.news-box {
+  padding: 24px;
+  display: grid;
+  gap: 16px;
+}
+
+.news-card {
+  background: #0b0e11;
+  border: 1px solid #2a3036;
+  border-radius: 12px;
+  padding: 22px;
+}
+
+.news-card p {
+  color: #aab1bb;
+  margin-top: 8px;
+  line-height: 1.6;
+}
+
+/* LOGIN */
+
+/* LOGIN MODAL */
+
+.login-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.68);
+  backdrop-filter: blur(4px);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.login-modal {
+  width: 960px;
+  max-width: 95%;
+  height: 520px;
+  background: #171c21;
+  color: white;
+  display: grid;
+  grid-template-columns: 43% 57%;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.65);
+}
+
+.login-modal-left {
+  background: #171c21;
+  padding: 46px 48px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+}
+
+.login-modal-left h1 {
+  font-size: 27px;
+  line-height: 1.12;
+  font-weight: 900;
+  letter-spacing: -0.8px;
+  margin-bottom: 30px;
+}
+
+.social-login-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 320px;
+}
+
+.social-login-buttons button {
+  width: 100%;
+  height: 44px;
+  border-radius: 4px;
+  border: 1px solid #4a5058;
+  background: transparent;
+  color: #ffffff;
+  display: grid;
+  grid-template-columns: 46px 1fr;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 800;
+  overflow: hidden;
+}
+
+.social-login-buttons button:first-child {
+  background: #ffffff;
+  color: #20242a;
+  border-color: #ffffff;
+}
+
+.social-login-buttons button:hover {
+  background: #252b32;
+}
+
+.social-login-buttons button:first-child:hover {
+  background: #e7e9ef;
+}
+
+.social-login-buttons p {
+  font-size: 13px;
+  font-weight: 900;
+  text-align: center;
+  white-space: nowrap;
+  padding-right: 16px;
+}
+
+.login-brand-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  justify-self: center;
+}
+
+.apple-img {
+  filter: invert(1);
+}
+
+
+.login-terms {
+  margin-top: auto;
+  color: #939ba6;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.login-terms span {
+  color: #7f8cff;
+  font-weight: 800;
+}
+
+.login-modal-right {
+  position: relative;
+  background-image:
+    linear-gradient(90deg, rgba(23, 28, 33, 0.15), rgba(0, 0, 0, 0.12)),
+    url("https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=1600&q=80");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.login-modal-right::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.45)
+  );
+}
+
+.close-login {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.55);
+  color: #ffffff;
+  border: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  font-size: 16px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.close-login:hover {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.corner {
+  position: absolute;
+  z-index: 3;
+  width: 75px;
+  height: 75px;
+  pointer-events: none;
+}
+
+.corner-top-left {
+  top: 18px;
+  left: 18px;
+  border-top: 3px solid rgba(255, 255, 255, 0.75);
+  border-left: 3px solid rgba(255, 255, 255, 0.75);
+}
+
+.corner-bottom-right {
+  right: 24px;
+  bottom: 24px;
+  border-right: 3px solid rgba(255, 255, 255, 0.75);
+  border-bottom: 3px solid rgba(255, 255, 255, 0.75);
+}
+
+.login-sport-label {
+  position: absolute;
+  right: 56px;
+  bottom: 58px;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.login-sport-label h2 {
+  font-size: 42px;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.login-sport-label span {
+  font-size: 32px;
+}
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    order: 2;
+  }
+
+  .content {
+    order: 1;
+  }
+
+  .topbar {
+    height: auto;
+    min-height: 64px;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .logo {
+    position: static;
+    transform: none;
+  }
+
+  .search-box {
+    width: 100%;
+    max-width: 100%;
+    order: 3;
+  }
+
+  .logo {
+    align-self: flex-start;
+  }
+
+  .top-actions {
+    align-self: flex-end;
+  }
+
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 28px;
+  }
+
+  .favorite-btn {
+    position: static;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 900px) {
+  .login-modal {
+    width: 95%;
+    height: auto;
+    min-height: 620px;
+    grid-template-columns: 1fr;
+  }
+
+  .login-modal-left {
+    padding: 34px 24px;
+  }
+
+  .login-modal-left h1 {
+    font-size: 25px;
+  }
+
+  .login-modal-right {
+    min-height: 260px;
+  }
+
+  .login-sport-label {
+    right: 34px;
+    bottom: 38px;
+  }
+
+  .login-sport-label h2 {
+    font-size: 34px;
+  }
+}
+.login-brand-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  margin-left: 14px;
+}
+
+.apple-img {
+  filter: invert(1);
+}
+/* FORMULARIO DE LOGIN GOALZONE */
+
+.back-to-options {
+  width: fit-content;
+  background: transparent;
+  border: none;
+  color: #8c94ff;
+  font-size: 14px;
+  font-weight: 900;
+  cursor: pointer;
+  margin-bottom: 24px;
+}
+
+.back-to-options:hover {
+  color: #ffffff;
+}
+
+.login-form-header {
+  margin-bottom: 24px;
+}
+
+.login-form-header h1 {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.login-form-header p {
+  color: #aab1bb;
+  font-size: 14px;
+}
+
+.login-form-header strong {
+  color: #ffffff;
+}
+
+.goalzone-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.goalzone-login-form label {
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 900;
+  margin-top: 6px;
+}
+
+.goalzone-login-form input {
+  height: 44px;
+  background: #0d1116;
+  border: 1px solid #343b44;
+  border-radius: 6px;
+  color: #ffffff;
+  padding: 0 14px;
+  font-size: 14px;
+  outline: none;
+}
+
+.goalzone-login-form input::placeholder {
+  color: #777f8a;
+}
+
+.goalzone-login-form input:focus {
+  border-color: #8c94ff;
+}
+
+.login-submit-btn {
+  height: 46px;
+  margin-top: 14px;
+  border: none;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #111111;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.login-submit-btn:hover {
+  background: #dfe2ff;
+}
+
+.change-login-mode {
+  margin-top: 18px;
+  color: #aab1bb;
+  font-size: 13px;
+}
+
+.change-login-mode button {
+  background: transparent;
+  border: none;
+  color: #8c94ff;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.change-login-mode button:hover {
+  color: #ffffff;
+}
+
+/* MENSAJE DE LOGIN CORRECTO */
+
+.login-message {
+  margin-top: 8px;
+  color: #b7f7c6;
+  background: rgba(34, 197, 94, 0.15);
+  border: 1px solid rgba(34, 197, 94, 0.55);
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.login-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* MENSAJES DEL LOGIN */
+
+.login-message {
+  margin-top: 8px;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.login-message.success {
+  color: #b7f7c6;
+  background: rgba(34, 197, 94, 0.15);
+  border: 1px solid rgba(34, 197, 94, 0.55);
+}
+
+.login-message.error {
+  color: #ffb4b4;
+  background: rgba(255, 80, 80, 0.12);
+  border: 1px solid rgba(255, 80, 80, 0.35);
+}
+
+.login-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* MENSAJE PROFESIONAL LOGIN */
+
+.professional-message {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: 38px 1fr;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 13px 14px;
+  border-radius: 10px;
+  animation: fadeInMessage 0.25s ease;
+}
+
+.professional-message .message-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  font-size: 16px;
+}
+
+.professional-message h3 {
+  font-size: 14px;
+  margin-bottom: 4px;
+  font-weight: 900;
+}
+
+.professional-message p {
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+
+.professional-message.success {
+  color: #d8ffe1;
+  background: linear-gradient(
+    135deg,
+    rgba(34, 197, 94, 0.18),
+    rgba(21, 128, 61, 0.08)
+  );
+  border: 1px solid rgba(34, 197, 94, 0.55);
+}
+
+.professional-message.success .message-icon {
+  background: rgba(34, 197, 94, 0.25);
+  color: #86efac;
+  border: 1px solid rgba(34, 197, 94, 0.6);
+}
+
+.professional-message.error {
+  color: #ffe0e0;
+  background: linear-gradient(
+    135deg,
+    rgba(239, 68, 68, 0.18),
+    rgba(127, 29, 29, 0.08)
+  );
+  border: 1px solid rgba(239, 68, 68, 0.55);
+}
+
+.professional-message.error .message-icon {
+  background: rgba(239, 68, 68, 0.25);
+  color: #fecaca;
+  border: 1px solid rgba(239, 68, 68, 0.6);
+}
+
+@keyframes fadeInMessage {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* MENÚ DE USUARIO */
+
+.user-menu-wrapper {
+  position: relative;
+}
+
+.user-dropdown {
+  position: absolute;
+  top: 58px;
+  right: 0;
+  width: 280px;
+  background: #151a1f;
+  border: 1px solid #30363d;
+  border-radius: 14px;
+  padding: 16px;
+  z-index: 1000;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.55);
+}
+
+.user-dropdown-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #2a3036;
+}
+
+.user-avatar-big {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #8c94ff;
+  color: white;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  font-size: 20px;
+}
+
+.user-dropdown-header h4 {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.user-dropdown-header p {
+  font-size: 12px;
+  color: #aab1bb;
+  max-width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.logout-btn {
+  margin-top: 14px;
+  width: 100%;
+  height: 42px;
+  border: none;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #111111;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: #dfe2ff;
+}
+/* MENÚ DE USUARIO MEJORADO */
+
+.user-menu-wrapper {
+  position: relative;
+}
+
+.user-dropdown {
+  position: absolute;
+  top: 62px;
+  right: 0;
+  width: 330px;
+  background: rgba(21, 26, 31, 0.98);
+  border: 1px solid rgba(140, 148, 255, 0.22);
+  border-radius: 18px;
+  padding: 18px;
+  z-index: 2000;
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(12px);
+  animation: userMenuFade 0.18s ease;
+}
+
+.user-dropdown::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  right: 22px;
+  width: 16px;
+  height: 16px;
+  background: rgba(21, 26, 31, 0.98);
+  border-left: 1px solid rgba(140, 148, 255, 0.22);
+  border-top: 1px solid rgba(140, 148, 255, 0.22);
+  transform: rotate(45deg);
+}
+
+.user-profile-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.user-avatar-big {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #8c94ff, #6d5dfc);
+  color: white;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  font-size: 18px;
+  border: 3px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 8px 22px rgba(108, 93, 252, 0.35);
+}
+
+.user-profile-info {
+  min-width: 0;
+}
+
+.user-profile-info h4 {
+  font-size: 15px;
+  font-weight: 900;
+  margin-bottom: 4px;
+}
+
+.user-profile-info p {
+  font-size: 12px;
+  color: #c7ccd5;
+  max-width: 215px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.user-profile-info span {
+  display: inline-block;
+  margin-top: 7px;
+  font-size: 11px;
+  color: #86efac;
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.28);
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-weight: 800;
+}
+
+.user-dropdown-line {
+  height: 1px;
+  background: #2a3036;
+  margin: 16px 0;
+}
+
+.user-menu-option {
+  width: 100%;
+  height: 42px;
+  background: transparent;
+  color: #dce2ea;
+  border: none;
+  border-radius: 10px;
+  text-align: left;
+  padding: 0 12px;
+  font-weight: 800;
+  cursor: pointer;
+  margin-bottom: 6px;
+}
+
+.user-menu-option:hover {
+  background: #222831;
+}
+
+.logout-btn {
+  margin-top: 8px;
+  width: 100%;
+  height: 44px;
+  border: none;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #111111;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: #dfe2ff;
+}
+
+@keyframes userMenuFade {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* UBICAR USUARIO EN ESQUINA SUPERIOR DERECHA DEL HEADER */
+
+.topbar > .user-menu-wrapper {
+  position: absolute !important;
+  top: 50% !important;
+  right: 24px !important;
+  transform: translateY(-50%) !important;
+  z-index: 3000 !important;
+}
+
+.topbar > .user-menu-wrapper .user-dropdown {
+  position: absolute !important;
+  top: 62px !important;
+  right: 0 !important;
+}
+
+/* Ajuste para que el buscador no choque con el usuario */
+.search-box {
+  margin-right: 90px;
+}
+
+/* ARREGLO PARA QUE LA IMAGEN DEL LOGIN NO SE DISTORSIONE */
+
+.login-modal {
+  width: 960px !important;
+  height: 540px !important;
+  max-width: 95% !important;
+  display: grid !important;
+  grid-template-columns: 43% 57% !important;
+  align-items: stretch !important;
+  overflow: hidden !important;
+}
+
+.login-modal-left {
+  height: 540px !important;
+  overflow-y: auto !important;
+}
+
+.login-modal-right {
+  height: 540px !important;
+  min-height: 540px !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+
+.login-sport-label {
+  right: 56px !important;
+  bottom: 58px !important;
+  z-index: 4 !important;
+}
+
+.corner-bottom-right {
+  right: 24px !important;
+  bottom: 24px !important;
+}
+/* QUITAR BARRA DEL LOGIN Y AJUSTAR CONTENIDO */
+
+.login-modal-left {
+  height: 540px !important;
+  overflow: hidden !important;
+  padding: 34px 48px !important;
+}
+
+.login-form-header {
+  margin-bottom: 16px !important;
+}
+
+.login-form-header h1 {
+  font-size: 30px !important;
+  margin-bottom: 6px !important;
+}
+
+.goalzone-login-form {
+  gap: 8px !important;
+}
+
+.goalzone-login-form input {
+  height: 42px !important;
+}
+
+.professional-message {
+  margin-top: 8px !important;
+  padding: 10px 12px !important;
+  grid-template-columns: 34px 1fr !important;
+  gap: 10px !important;
+}
+
+.professional-message .message-icon {
+  width: 28px !important;
+  height: 28px !important;
+}
+
+.professional-message h3 {
+  font-size: 13px !important;
+}
+
+.professional-message p {
+  font-size: 12px !important;
+}
+
+.login-submit-btn {
+  height: 44px !important;
+  margin-top: 10px !important;
+}
+
+.change-login-mode {
+  margin-top: 12px !important;
+}
