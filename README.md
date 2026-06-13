@@ -1,64 +1,66 @@
 # GoalZone ⚽
 
-## Project Description
+## Descripción del proyecto
 
-GoalZone is a web platform focused on FIFA World Cup information and statistics. The application allows users to view match schedules, team standings, football news, and match statistics through a modern and interactive interface inspired by football platforms such as SofaScore.
+GoalZone es una plataforma web centrada en información y estadísticas de la Copa Mundial de la FIFA. La aplicación permite a los usuarios consultar calendarios de partidos, clasificación de equipos, noticias de fútbol y estadísticas de los encuentros mediante una interfaz moderna e interactiva inspirada en plataformas deportivas como SofaScore.
 
-The project was developed using React and Vite, providing dynamic content updates without reloading the page and offering a responsive user experience across different devices.
+El proyecto fue desarrollado utilizando React y Vite, lo que permite una experiencia rápida, dinámica y adaptable a diferentes dispositivos. Además, cuenta con autenticación de usuarios mediante Supabase y despliegue en línea a través de Vercel.
 
----
+## Características principales
 
-# Main Features
+- Calendario de partidos organizado por grupos y días de partido.
+- Navegación dinámica entre jornadas.
+- Clasificación y posiciones de los equipos.
+- Estadísticas de partidos.
+- Banderas e información de equipos.
+- Interfaz oscura moderna y adaptable.
+- Pestañas de navegación interactivas.
+- Sistema de login y registro de usuarios.
+- Despliegue en línea mediante Vercel.
 
-* Match schedules organized by groups and matchdays
-* Dynamic navigation between matchdays
-* Team standings and classifications
-* Match statistics
-* Team flags and information
-* Responsive and modern dark interface
-* Interactive navigation tabs
-* Online deployment using GitHub Pages
+## Tecnologías utilizadas
 
----
+### React
 
-# Technologies Used
+Se utiliza para crear componentes de interfaz dinámicos, reutilizables e interactivos.
 
-## React
+### Vite
 
-Used to create dynamic and reusable user interface components.
+Se utiliza como herramienta de desarrollo para ejecutar y construir el proyecto de manera rápida.
 
-## Git & GitHub
+### Supabase
 
-Used for version control and project repository management.
+Se utiliza para la autenticación de usuarios y conexión con la base de datos en línea.
 
-## GitHub Pages
+### Git y GitHub
 
-Used to deploy and publish the application online.
+Se utiliza para el control de versiones y la gestión del repositorio del proyecto.
 
----
+### Vercel
 
-# Scrum Roles
+Se utiliza para desplegar y publicar la aplicación web en línea.
 
-## Product Owner
+## Roles de Scrum
 
-PEREZ DONAYRE RENATO
-Responsible for defining the project requirements and objectives.
+### Product Owner
 
-## Scrum Master
+**PEREZ DONAYRE RENATO**
 
-MAMANI MAMANI REINER
-Responsible for coordinating the Scrum process and team organization.
+Responsable de definir los requisitos y objetivos del proyecto.
 
-## Development Team
+### Scrum Master
 
-AVALOS CIPRIAN CAMILO
-SAAVEDRA TOLENTINO CRISTIAN
+**MAMANI MAMANI REINER**
 
-Responsible for developing and implementing the web application functionalities and interface.
+Responsable de coordinar el proceso Scrum y la organización del equipo.
 
----
+### Equipo de desarrollo
 
-# Live Website
+**AVALOS CIPRIAN CAMILO**
+**SAAVEDRA TOLENTINO CRISTIAN**
 
-https://kaws06.github.io/world-cup/
+Responsables del desarrollo e implementación de las funcionalidades y la interfaz de la aplicación web.
 
+## Sitio web en vivo
+
+https://goalzone-one.vercel.app/
